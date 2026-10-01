@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pablo Contabilidade | Soluções Contábeis e Empresariais</title>
+
+    <meta name="description"
+          content="Pablo Contabilidade - Serviços de contabilidade, consultoria tributária, abertura de empresas, folha de pagamento e soluções empresariais em Itabaiana, Sergipe.">
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0b5ed7;
+            --primary-dark: #073b8c;
+            --secondary: #0f766e;
+            --dark: #0f172a;
+            --text: #475569;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --success: #16a34a;
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: #ffffff;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(15, 23, 42, 0.06);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--dark) !important;
+            font-size: 1.3rem;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            margin-right: 8px;
+        }
+
+        .navbar .nav-link {
+            color: #334155;
+            font-weight: 500;
+            margin: 0 5px;
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 150px 0 100px;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(37, 99, 235, .18), transparent 35%),
+                radial-gradient(circle at 10% 90%, rgba(20, 184, 166, .13), transparent 30%),
+                linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, .06);
+            top: -150px;
+            right: -100px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: #e0f2fe;
+            color: #0369a1;
+            border-radius: 50px;
+            font-size: .88rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: var(--dark);
+            font-weight: 800;
+            font-size: clamp(2.4rem, 5vw, 4.4rem);
+            line-height: 1.08;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+        }
+
+        .btn-main {
+            background: var(--primary);
+            border: none;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .btn-main:hover {
+            background: var(--primary-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            border: 1px solid #cbd5e1;
+            color: var(--dark);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            background: white;
+        }
+
+        .btn-outline-custom:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* HERO CARD */
+        .hero-card {
+            background: white;
+            border-radius: 25px;
+            padding: 28px;
+            box-shadow: 0 25px 70px rgba(15, 23, 42, .12);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .company-logo {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--success);
+            font-size: .85rem;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+        }
+
+        .hero-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hero-info-item {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .hero-info-item small {
+            display: block;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        .hero-info-item strong {
+            color: var(--dark);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            color: var(--dark);
+            font-weight: 800;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            max-width: 680px;
+            margin: auto;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--primary);
+            background: #eff6ff;
+            padding: 6px 13px;
+            border-radius: 30px;
+            font-size: .8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        /* STATS */
+        .stats {
+            margin-top: -35px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 16px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, .05);
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: #eff6ff;
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .stat-card h3 {
+            color: var(--dark);
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        /* SERVICES */
+        .services-section {
+            background: var(--light);
+        }
+
+        .service-card {
+            height: 100%;
+            padding: 30px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            border-color: #bfdbfe;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, .08);
+        }
+
+        .service-icon {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #eff6ff, #ecfeff);
+            color: var(--primary);
+            border-radius: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h5 {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .service-card p {
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* ABOUT */
+        .about-box {
+            background: var(--dark);
+            color: white;
+            border-radius: 25px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-box::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, .15);
+            right: -100px;
+            top: -100px;
+        }
+
+        .about-box h2 {
+            font-weight: 800;
+        }
+
+        .about-box p {
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0 0;
+        }
+
+        .check-list li {
+            margin-bottom: 14px;
+            color: #e2e8f0;
+        }
+
+        .check-list i {
+            color: #34d399;
+            margin-right: 8px;
+        }
+
+        /* ACTIVITIES */
+        .activity-card {
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 22px;
+            height: 100%;
+            background: white;
+        }
+
+        .activity-code {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: .78rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .activity-card h6 {
+            color: var(--dark);
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .activity-card p {
+            font-size: .9rem;
+            margin: 0;
+        }
+
+        /* COMPANY */
+        .company-table {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .company-table .row {
+            border-bottom: 1px solid var(--border);
+            padding: 15px 20px;
+        }
+
+        .company-table .row:last-child {
+            border-bottom: none;
+        }
+
+        .company-label {
+            color: #64748b;
+            font-size: .9rem;
+        }
+
+        .company-value {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: #f8fafc;
+        }
+
+        .contact-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+            height: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eff6ff;
+            color: var(--primary);
+            border-radius: 12px;
+            font-size: 1.2rem;
+        }
+
+        .contact-item h6 {
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        .whatsapp-btn {
+            background: #16a34a;
+            color: white;
+            padding: 13px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #15803d;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            padding: 55px 0 25px;
+        }
+
+        footer h5 {
+            color: white;
+            font-weight: 700;
+        }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-brand {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            margin-top: 35px;
+            padding-top: 20px;
+            font-size: .85rem;
+        }
+
+        /* FLOATING WHATSAPP */
+        .floating-whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25d366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            z-index: 999;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, .4);
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .floating-whatsapp:hover {
+            color: white;
+            transform: scale(1.08);
+        }
+
+        @media (max-width: 991px) {
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero-card {
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 65px 0;
+            }
+
+            .hero {
+                padding: 110px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-box {
+                padding: 30px;
+            }
+
+            .hero-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ========================================================= -->
+<!-- NAVBAR -->
+<!-- ========================================================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#inicio">
+            <span class="brand-icon">
+                <i class="bi bi-calculator"></i>
+            </span>
+            Pablo Contabilidade
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Início</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicos">Serviços</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#empresa">Empresa</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#atividades">Atividades</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Contato</a>
+                </li>
+
+                <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                    <a
+                        class="btn btn-main"
+                        href="https://wa.me/5579999666589"
+                        target="_blank">
+                        <i class="bi bi-whatsapp me-1"></i>
+                        Fale Conosco
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- ========================================================= -->
+<!-- HERO -->
+<!-- ========================================================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <span class="hero-badge">
+                    <i class="bi bi-patch-check-fill"></i>
+                    Contabilidade & Soluções Empresariais
+                </span>
+
+                <h1>
+                    Contabilidade que
+                    <span>impulsiona</span>
+                    o seu negócio.
+                </h1>
+
+                <p class="mt-4">
+                    Soluções contábeis, tributárias e empresariais para
+                    ajudar sua empresa a crescer com organização,
+                    segurança e tranquilidade.
+                </p>
+
+                <div class="hero-buttons d-flex flex-wrap gap-3">
+
+                    <a
+                        href="https://wa.me/5579999666589"
+                        target="_blank"
+                        class="btn btn-main">
+                        <i class="bi bi-whatsapp me-2"></i>
+                        Falar com um especialista
+                    </a>
+
+                    <a
+                        href="#servicos"
+                        class="btn btn-outline-custom">
+                        Conheça nossos serviços
+                        <i class="bi bi-arrow-down ms-2"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-5">
+
+                <div class="hero-card">
+
+                    <div class="hero-card-header">
+
+                        <div class="company-logo">
+                            <i class="bi bi-calculator-fill"></i>
+                        </div>
+
+                        <div>
+                            <h5 class="mb-1 fw-bold text-dark">
+                                Pablo Contabilidade
+                            </h5>
+
+                            <div class="status">
+                                <span class="status-dot"></span>
+                                Empresa Ativa
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hero-info">
+
+                        <div class="hero-info-item">
+                            <small>CNPJ</small>
+                            <strong>60.264.773/0001-07</strong>
+                        </div>
+
+                        <div class="hero-info-item">
+                            <small>CRC</small>
+                            <strong>SE-000950/O</strong>
+                        </div>
+
+                        <div class="hero-info-item">
+                            <small>Regime</small>
+                            <strong>Simples Nacional</strong>
+                        </div>
+
+                        <div class="hero-info-item">
+                            <small>Localização</small>
+                            <strong>Itabaiana - SE</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- STATS -->
+<!-- ========================================================= -->
+
+<div class="stats">
+
+    <div class="container">
+
+        <div class="row g-3">
+
+            <div class="col-md-3">
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-building"></i>
+                    </div>
+
+                    <h3>2025</h3>
+                    <p class="mb-0">
+                        Ano de fundação
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-person-badge"></i>
+                    </div>
+
+                    <h3>CRC</h3>
+                    <p class="mb-0">
+                        SE-000950/O
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+
+                    <h3>ME</h3>
+                    <p class="mb-0">
+                        Micro Empresa
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <h3>Ativa</h3>
+                    <p class="mb-0">
+                        Situação cadastral
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- SERVIÇOS -->
+<!-- ========================================================= -->
+
+<section class="services-section" id="servicos">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                Nossos serviços
+            </span>
+
+            <h2 class="section-title">
+                Soluções para sua empresa
+            </h2>
+
+            <p class="section-subtitle">
+                Conte com suporte profissional para manter sua empresa
+                organizada, regularizada e preparada para crescer.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-calculator"></i>
+                    </div>
+
+                    <h5>Contabilidade</h5>
+
+                    <p>
+                        Escrituração contábil e acompanhamento das
+                        informações financeiras da sua empresa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-receipt"></i>
+                    </div>
+
+                    <h5>Consultoria Tributária</h5>
+
+                    <p>
+                        Orientação para organização fiscal e tributária,
+                        ajudando sua empresa a manter suas obrigações em dia.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+
+                    <h5>Consultoria Empresarial</h5>
+
+                    <p>
+                        Apoio para decisões empresariais e organização
+                        dos processos administrativos.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+
+                    <h5>Obrigações Contábeis</h5>
+
+                    <p>
+                        Acompanhamento e organização das obrigações
+                        necessárias para sua empresa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-person-workspace"></i>
+                    </div>
+
+                    <h5>Treinamento Profissional</h5>
+
+                    <p>
+                        Treinamentos voltados para desenvolvimento
+                        profissional e gerencial.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-laptop"></i>
+                    </div>
+
+                    <h5>Soluções em Tecnologia</h5>
+
+                    <p>
+                        Desenvolvimento de software e soluções
+                        tecnológicas para necessidades empresariais.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- SOBRE -->
+<!-- ========================================================= -->
+
+<section id="empresa">
+
+    <div class="container">
+
+        <div class="about-box">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+
+                    <span class="section-label bg-primary text-white">
+                        Sobre a empresa
+                    </span>
+
+                    <h2 class="mt-2">
+                        Mais do que números.
+                        Estratégia para o seu negócio.
+                    </h2>
+
+                    <p class="mt-4">
+                        A <strong class="text-white">
+                        Pablo Contabilidade
+                        </strong>, razão social Andrade Centro de
+                        Solucoes Empresariais LTDA, atua na área de
+                        contabilidade e soluções empresariais em
+                        Itabaiana, Sergipe.
+                    </p>
+
+                    <p>
+                        Nosso objetivo é oferecer suporte para que
+                        empresários possam cuidar do crescimento de
+                        seus negócios enquanto contam com uma
+                        contabilidade organizada e próxima.
+                    </p>
+
+                    <ul class="check-list">
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Atendimento próximo e personalizado
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Organização contábil e empresarial
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Orientação para empresas
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Soluções contábeis e tecnológicas
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-lg-5 mt-5 mt-lg-0">
+
+                    <div class="bg-white rounded-4 p-4 position-relative">
+
+                        <h5 class="fw-bold text-dark">
+                            Nossa proposta
+                        </h5>
+
+                        <p class="mt-3 mb-0">
+                            Transformar informações contábeis em
+                            conhecimento para apoiar decisões
+                            empresariais mais organizadas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- ATIVIDADES CNAE -->
+<!-- ========================================================= -->
+
+<section id="atividades" class="bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                Atividades econômicas
+            </span>
+
+            <h2 class="section-title">
+                Áreas de atuação
+            </h2>
+
+            <p class="section-subtitle">
+                A empresa possui atividade principal na área contábil
+                e também atua em diferentes áreas de serviços e tecnologia.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <span class="activity-code">
+                        CNAE PRINCIPAL
+                    </span>
+
+                    <h6>
+                        69.20-6-01
+                    </h6>
+
+                    <p>
+                        Atividades de contabilidade
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <span class="activity-code">
+                        CNAE
+                    </span>
+
+                    <h6>
+                        69.20-6-02
+                    </h6>
+
+                    <p>
+                        Atividades de consultoria e auditoria
+                        contábil e tributária
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <span class="activity-code">
+                        CNAE
+                    </span>
+
+                    <h6>
+                        85.99-6-04
+                    </h6>
+
+                    <p>
+                        Treinamento em desenvolvimento
+                        profissional e gerencial
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <span class="activity-code">
+                        CNAE
+                    </span>
+
+                    <h6>
+                        62.02-3-00
+                    </h6>
+
+                    <p>
+                        Desenvolvimento e licenciamento de
+                        programas de computador customizáveis
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <span class="activity-code">
+                        CNAE
+                    </span>
+
+                    <h6>
+                        62.01-5-01
+                    </h6>
+
+                    <p>
+                        Desenvolvimento de programas de
+                        computador sob encomenda
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <span class="activity-code">
+                        CNAE
+                    </span>
+
+                    <h6>
+                        82.11-3-00
+                    </h6>
+
+                    <p>
+                        Serviços combinados de escritório
+                        e apoio administrativo
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <span class="activity-code">
+                        CNAE
+                    </span>
+
+                    <h6>
+                        47.51-2-01
+                    </h6>
+
+                    <p>
+                        Comércio varejista especializado de
+                        equipamentos e suprimentos de informática
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <span class="activity-code">
+                        CNAE
+                    </span>
+
+                    <h6>
+                        95.11-8-00
+                    </h6>
+
+                    <p>
+                        Reparação e manutenção de computadores
+                        e equipamentos periféricos
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="activity-card">
+
+                    <span class="activity-code">
+                        CNAE
+                    </span>
+
+                    <h6>
+                        73.19-0-02
+                    </h6>
+
+                    <p>
+                        Promoção de vendas
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- DADOS DA EMPRESA -->
+<!-- ========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                Informações cadastrais
+            </span>
+
+            <h2 class="section-title">
+                Dados da empresa
+            </h2>
+
+        </div>
+
+
+        <div class="company-table">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 company-label">
+                    Razão Social
+                </div>
+
+                <div class="col-md-8 company-value">
+                    Andrade Centro de Solucoes Empresariais LTDA
+                </div>
+
+            </div>
+
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 company-label">
+                    Nome Fantasia
+                </div>
+
+                <div class="col-md-8 company-value">
+                    Pablo Contabilidade
+                </div>
+
+            </div>
+
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 company-label">
+                    CNPJ
+                </div>
+
+                <div class="col-md-8 company-value">
+                    60.264.773/0001-07
+                </div>
+
+            </div>
+
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 company-label">
+                    Data de abertura
+                </div>
+
+                <div class="col-md-8 company-value">
+                    05/04/2025
+                </div>
+
+            </div>
+
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 company-label">
+                    Natureza Jurídica
+                </div>
+
+                <div class="col-md-8 company-value">
+                    Sociedade Empresária Limitada
+                </div>
+
+            </div>
+
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 company-label">
+                    Porte
+                </div>
+
+                <div class="col-md-8 company-value">
+                    Micro Empresa
+                </div>
+
+            </div>
+
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 company-label">
+                    Regime Tributário
+                </div>
+
+                <div class="col-md-8 company-value">
+                    Simples Nacional
+                </div>
+
+            </div>
+
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 company-label">
+                    Capital Social
+                </div>
+
+                <div class="col-md-8 company-value">
+                    R$ 50.000,00
+                </div>
+
+            </div>
+
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 company-label">
+                    CRC
+                </div>
+
+                <div class="col-md-8 company-value">
+                    SE-000950/O
+                </div>
+
+            </div>
+
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 company-label">
+                    Situação cadastral
+                </div>
+
+                <div class="col-md-8 company-value text-success">
+                    <i class="bi bi-check-circle-fill me-1"></i>
+                    Ativa
+                </div>
+
+            </div>
+
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4 company-label">
+                    Sócio-Administrador
+                </div>
+
+                <div class="col-md-8 company-value">
+                    Pablo Nascimento Ribeiro de Andrade
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- CONTATO -->
+<!-- ========================================================= -->
+
+<section class="contact-section" id="contato">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="section-label">
+                Entre em contato
+            </span>
+
+            <h2 class="section-title">
+                Vamos conversar?
+            </h2>
+
+            <p class="section-subtitle">
+                Estamos em Itabaiana, Sergipe, prontos para
+                atender sua empresa.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+
+                <div class="contact-card">
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>WhatsApp / Telefone</h6>
+
+                            <a href="tel:+5579999666589">
+                                (79) 99966-6589
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>E-mail</h6>
+
+                            <a href="mailto:wellington@cednetprovenet.digital">
+                                wellington@cednetprovenet.digital
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item mb-0">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>Endereço</h6>
+
+                            <p class="mb-0">
+                                Rua Lourenço Alves dos Santos, 257<br>
+                                Andar Sala 04<br>
+                                Rotary Club de Itabaiana<br>
+                                Itabaiana - SE<br>
+                                CEP 49506-294
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="contact-card">
+
+                    <h4 class="fw-bold text-dark mb-3">
+                        Atendimento empresarial
+                    </h4>
+
+                    <p>
+                        Precisa de ajuda com contabilidade,
+                        organização empresarial, consultoria
+                        tributária ou soluções para sua empresa?
+                    </p>
+
+                    <p>
+                        Entre em contato conosco pelo WhatsApp
+                        e fale diretamente com nossa equipe.
+                    </p>
+
+                    <a
+                        href="https://wa.me/5579999666589"
+                        target="_blank"
+                        class="whatsapp-btn mt-3">
+
+                        <i class="bi bi-whatsapp fs-5"></i>
+
+                        Falar pelo WhatsApp
+
+                    </a>
+
+
+                    <div class="mt-4 pt-4 border-top">
+
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Rua+Lourenço+Alves+dos+Santos+257+Itabaiana+SE"
+                            target="_blank"
+                            class="btn btn-outline-custom">
+
+                            <i class="bi bi-geo-alt me-2"></i>
+
+                            Ver localização no Google Maps
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- CTA -->
+<!-- ========================================================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div
+            class="rounded-4 p-4 p-md-5 text-center"
+            style="background: linear-gradient(135deg, #0b5ed7, #0f766e);">
+
+            <i class="bi bi-rocket-takeoff text-white fs-1"></i>
+
+            <h2 class="text-white fw-bold mt-3">
+                Sua empresa pode crescer com mais organização.
+            </h2>
+
+            <p class="text-white opacity-75 mx-auto" style="max-width: 650px;">
+                Conte com a Pablo Contabilidade para cuidar das
+                informações contábeis e apoiar as decisões do seu negócio.
+            </p>
+
+            <a
+                href="https://wa.me/5579999666589"
+                target="_blank"
+                class="btn btn-light mt-2 px-4 py-3 fw-semibold">
+
+                <i class="bi bi-whatsapp text-success me-2"></i>
+
+                Solicitar atendimento
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- FOOTER -->
+<!-- ========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-5">
+
+                <div class="footer-brand mb-3">
+                    <i class="bi bi-calculator me-2"></i>
+                    Pablo Contabilidade
+                </div>
+
+                <p>
+                    Soluções contábeis e empresariais para ajudar
+                    sua empresa a crescer com organização,
+                    segurança e tranquilidade.
+                </p>
+
+            </div>
+
+
+            <div class="col-sm-6 col-lg-3">
+
+                <h5 class="mb-3">
+                    Navegação
+                </h5>
+
+                <ul class="list-unstyled">
+
+                    <li class="mb-2">
+                        <a href="#inicio">Início</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#servicos">Serviços</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#empresa">Empresa</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#atividades">Atividades</a>
+                    </li>
+
+                    <li>
+                        <a href="#contato">Contato</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="col-sm-6 col-lg-4">
+
+                <h5 class="mb-3">
+                    Contato
+                </h5>
+
+                <p class="mb-2">
+                    <i class="bi bi-telephone me-2"></i>
+                    (79) 99966-6589
+                </p>
+
+                <p class="mb-2">
+                    <i class="bi bi-envelope me-2"></i>
+                    wellington@cednetprovenet.digital
+                </p>
+
+                <p>
+                    <i class="bi bi-geo-alt me-2"></i>
+                    Itabaiana - Sergipe
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom text-center">
+
+            <p class="mb-1">
+                © 2026 Pablo Contabilidade.
+                Todos os direitos reservados.
+            </p>
+
+            <small>
+                Andrade Centro de Solucoes Empresariais LTDA
+                · CNPJ 60.264.773/0001-07
+            </small>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ========================================================= -->
+<!-- WHATSAPP FLUTUANTE -->
+<!-- ========================================================= -->
+
+<a
+    href="https://wa.me/5579999666589"
+    target="_blank"
+    class="floating-whatsapp"
+    aria-label="Falar pelo WhatsApp">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+
+<!-- Bootstrap JS -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
